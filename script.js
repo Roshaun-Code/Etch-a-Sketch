@@ -11,3 +11,9 @@ function makeGrid(row, column){
 }
 
 makeGrid(16, 16);
+
+document.querySelectorAll('.grid-item').forEach(function colorChange(item){
+    item.addEventListener('mouseover', () => {
+        item.classList.add('blue');
+    })
+})
