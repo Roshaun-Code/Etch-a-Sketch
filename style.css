@@ -1,0 +1,47 @@
+:root{
+    /*These are variables to store how many rows and colomns that will be used*/
+    --grid-column: 1;
+    --grid-row: 1;
+}
+
+body{
+    font-size: 26px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-weight: 700;
+}
+
+#flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#container{
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-column), 1fr);
+    border: 3px solid black;
+}
+
+/*#container > div{
+    border: black solid 3px;
+    display: flex;
+    flex: wrap;
+    height: 10px;
+    width: 10px;
+}*/
+
+.grid-item{
+    border: 1px solid black;
+    padding: 15px;
+}
