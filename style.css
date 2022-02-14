@@ -60,7 +60,6 @@ body{
 }*/
 
 .grid-item{
-    border: 1px solid #63458A;
     height: 100%;
     width: 100%;
 }
@@ -68,10 +67,4 @@ body{
 .color{
     content: "";
     background-color: #E4B7E5;
-}
-
-.error{
-    justify-self: center;
-    align-self: center;
-    border: 1px solid black;
 }
