@@ -10,22 +10,35 @@ function makeGrid(row, column){
         container.appendChild(cell).className = "grid-item";
     }
 }
-
-makeGrid(16, 16);
-
 //gets all the divs called grid item and puts them into a node list then cycle through each node to add an eventlistener to check if the mouse is hovering over the div
 //and if it is the add a the class 'blue' which changes the color of the div.
-const cell = document.querySelectorAll('.grid-item')
-cell.forEach(function colorChange(item){
-    item.addEventListener('mouseover', () => {
-        item.classList.add('blue');
+function colorChange(){
+    const cell = document.querySelectorAll('.grid-item')
+    cell.forEach(function color(item){
+        item.addEventListener('mouseover', () => {
+            item.classList.add('blue');
+        })
     })
-})
+}
 
+let num = 16;
+makeGrid(num, num);
+colorChange();
 
-//pressing this button will cause it to get a reference to all the grid items and remove the class 'blue' from it
+//pressing this button will cause it to get a reference to all the grid items and remove the class 'blue' from
 reload.addEventListener('click', ()=> {
     document.querySelectorAll('.grid-item').forEach(function (item) {
         item.classList.remove('blue');
+        item.parentNode.removeChild(item);
     })
+    let size = prompt("How big should the grid be?");
+    if (size > 100){
+        console.log("error");
+        } else{
+        makeGrid(size, size);
+        colorChange();
+    }
 })
+
+
+

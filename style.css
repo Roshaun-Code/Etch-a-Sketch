@@ -9,7 +9,6 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    /*height: 100vh;*/
 }
 .header{
     display: flex;
@@ -32,6 +31,10 @@ body{
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-column), 1fr);
     box-shadow: 0 0 5px black;
+    width: 512px;
+    height: 512px;
+    justify-content: center;
+    align-items: center;
 }
 
 /*#container > div{
@@ -44,11 +47,17 @@ body{
 
 .grid-item{
     border: 1px solid #ccc;
-    height: 30px;
-    width: 30px
+    height: 100%;
+    width: 100%;
 }
 
 .blue{
     content: "";
     background-color: rgb(0, 204, 255);
+}
+
+.error{
+    justify-self: center;
+    align-self: center;
+    border: 1px solid black;
 }
