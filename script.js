@@ -16,7 +16,7 @@ function colorChange(){
     const cell = document.querySelectorAll('.grid-item')
     cell.forEach(function color(item){
         item.addEventListener('mouseover', () => {
-            item.classList.add('blue');
+            item.classList.add('color');
         })
     })
 }
@@ -28,7 +28,7 @@ colorChange();
 //pressing this button will cause it to get a reference to all the grid items and remove the class 'blue' from
 reload.addEventListener('click', ()=> {
     document.querySelectorAll('.grid-item').forEach(function (item) {
-        item.classList.remove('blue');
+        item.classList.remove('color');
         item.parentNode.removeChild(item);
     })
     let size = prompt("How big should the grid be?");
