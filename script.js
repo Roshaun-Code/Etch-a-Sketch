@@ -10,14 +10,30 @@ function makeGrid(row, column){
         container.appendChild(cell).className = "grid-item";
     }
 }
+let mouseIsDown = false;
+
 //gets all the divs called grid item and puts them into a node list then cycle through each node to add an eventlistener to check if the mouse is hovering over the div
 //and if it is the add a the class 'blue' which changes the color of the div.
 function colorChange(){
-    const cell = document.querySelectorAll('.grid-item')
-    cell.forEach(function color(item){
-        item.addEventListener('mouseover', () => {
-            item.classList.add('color');
-        })
+    // const cell = document.querySelectorAll('.grid-item')
+    // cell.forEach(function color(item){
+    //     item.addEventListener('mouseover', () => {
+    //         item.classList.add('color');
+    //     })
+    // })
+    
+    const container = document.getElementById("container");
+    container.addEventListener("mousemove", (event) => {
+        if (mouseIsDown && event.target.className == "grid-item") {
+            event.target.classList.add('color');
+        }
+        
+    })
+    container.addEventListener("mousedown", (event) => {
+        mouseIsDown = true;
+    })
+    container.addEventListener("mouseup", (event) => {
+        mouseIsDown = false;
     })
 }
 
